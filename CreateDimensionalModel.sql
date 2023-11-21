@@ -1,3 +1,9 @@
+DROP SCHEMA IF EXISTS test;
+GO
+
+CREATE SCHEMA test;
+GO
+
 /*
 Generate your Job Dimension
 DimJob will have the following columns

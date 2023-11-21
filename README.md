@@ -2,7 +2,7 @@
 
 Step 1: Upload the each csv file under <i>data</i> on separate sql tables.
 
-Step 2: Execute <i>CreateDimensionalModel.sql</i> to create and populate the tables.
+Step 2: Execute <i>CreateDimensionalModel.sql</i> to create and populate the tables. Note that you need to change the schema name from <i>test</i> to whatever schema you uploaded the data into. For example, by default, tables will be created under <i>dbo</>. So this means that SQL statement using <i>test.Employees</i> will be changed to <i>dbo.Employees</i>
 
 Take note that dimension attributes can be sourced from a different table. For example, Employee Status is from a different table but is included in DimEmployee. You have to group together related attributes into a single dimension table. An example in retail is Product and Product Type.
 

@@ -36,10 +36,10 @@ CREATE TABLE test.DimJob
 INSERT INTO test.DimJob
 SELECT 
 	--JobID is auto-generated, no need to add in the select statement
-	JobUniqueIdentifier = j.JobUniqueIdentifier,
-	JobTitle			= j.JobTitle,
-	JobType				= jt.JobType,
-	DateCreated			= GETDATE(),
+	JobUniqueIdentifier 	= j.JobUniqueIdentifier,
+	JobTitle		= j.JobTitle,
+	JobType			= jt.JobType,
+	DateCreated		= GETDATE(),
 	DateLastUpdated		= GETDATE()
 FROM test.Jobs j
 INNER JOIN test.JobType jt ON j.JobTypeID = jt.JobTypeID
@@ -84,13 +84,13 @@ CREATE TABLE test.DimEmployee
 INSERT INTO test.DimEmployee
 SELECT 
 	--EmployeeID is auto-generated, no need to add in the select statement
-	EmployeeUniqueIdentifier	= e.EmployeeUniqueIdentifier,
-	EEFirstName					= e.EEFirstName,
-	EELastName					= e.EELastName,
-	EmploymentStatus			= et.EmploymentStatus,
-	JobID						= j.JobID,
-	DateCreated					= GETDATE(),
-	DateLastUpdated				= GETDATE()
+	EmployeeUniqueIdentifier 	= e.EmployeeUniqueIdentifier,
+	EEFirstName			= e.EEFirstName,
+	EELastName			= e.EELastName,
+	EmploymentStatus		= et.EmploymentStatus,
+	JobID				= j.JobID,
+	DateCreated			= GETDATE(),
+	DateLastUpdated			= GETDATE()
 FROM test.Employees e
 INNER JOIN test.DimJob j ON e.JobID = j.JobUniqueIdentifier
 INNER JOIN test.EmploymentStatus et ON e.EmploymentStatus = et.EmploymentStatusID
@@ -115,10 +115,10 @@ DROP TABLE IF EXISTS test.FactEmployeeJob
 GO
 
 SELECT 
-EmployeeID		= e.EmployeeID,
-JobID			= e.JobID,
+EmployeeID	= e.EmployeeID,
+JobID		= e.JobID,
 AnnualSalary	= es.AnnualSalary,
-MarketValue		= jm.JobMarketValue
+MarketValue	= jm.JobMarketValue
 INTO test.FactEmployeeJob -- This will automatically create the table from the SELECT statement
 FROM 
 (

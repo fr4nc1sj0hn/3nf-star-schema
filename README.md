@@ -1,6 +1,6 @@
 # 3nf-star-schema
 
-Step 1: Upload the files under <i>data</i> on an SQL table
+Step 1: Upload the each csv file under <i>data</i> on separate sql tables.
 
 Step 2: Execute <i>CreateDimensionalModel.sql</i> to create and populate the tables.
 
